@@ -40,6 +40,24 @@ Files named `placeholder-*` are ignored as soon as at least one real photo exist
 
 See [`photos/README.md`](photos/README.md) for details.
 
+## Customising the words
+
+Everything is in `index.html` (plain HTML/CSS/JS — just find & replace):
+
+| What | Where |
+| --- | --- |
+| The name | `MADIHA` / `Madiha` appears **8 times** — the `<title>`, two `<meta>` tags, the hero word (`data-text="MADIHA"`), the big watermark behind the meaning section, the "happy birthday, Madiha" line, the marquee text at the bottom of the script, and the closing paragraph. |
+| The big headline | `<h1 class="mega">` — three `<span class="word" data-text="...">` elements. Change the `data-text` and it rebuilds itself. |
+| Meaning section | `<div class="scrolly" id="meaningText">` |
+| The grave joke | `<section class="grave">` — headline, "death notice" list, tombstone text |
+| The serious message | `<span class="big-words" id="seriousText">` plus the paragraph below it |
+| The "last present" popup | `.present-card` — swap in your own gift/reveal |
+| Signature | search for `your favourite menace` |
+
+The exact line requested was *"NAH SERIOUSLY. YOU ARE ONE OF THE BEST THING THAT HAS
+HAPPEND TO ME."* — it's live with the spelling tidied up ("THINGS THAT HAS HAPPENED").
+Prefer it verbatim? Just edit `#seriousText`.
+
 ## Running it locally
 
 ```bash

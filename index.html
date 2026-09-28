@@ -752,8 +752,9 @@ footer .tiny{color:var(--ink-faint); font-size:.8rem; margin-top:22px}
 
   const $  = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
-  const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const TOUCH = window.matchMedia("(hover: none)").matches;
+  const mq = (q) => !!(window.matchMedia && window.matchMedia(q).matches);
+  const REDUCED = mq("(prefers-reduced-motion: reduce)");
+  const TOUCH = mq("(hover: none)");
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const rnd = (a, b) => a + Math.random() * (b - a);
 
